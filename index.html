@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MentoraX Academy — JEE | NEET | MHT-CET Coaching | Nandgaon Khandeshwar</title>
+<meta name="description" content="MentoraX Academy — personalised JEE, NEET & MHT-CET coaching with only 10 students per batch. Online live batches & offline classes. Foundation classes for 8th, 9th, 10th. Admissions open for 2026-27." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#11224e;
+    --navy-deep:#0b1838;
+    --gold:#f5b417;
+    --gold-soft:#ffd66b;
+    --ink:#1a1f2e;
+    --paper:#fbfaf7;
+    --paper-2:#f1eee6;
+    --white:#ffffff;
+    --muted:#5b6275;
+    --line:rgba(17,34,78,.12);
+    --green:#1f9d57;
+    --shadow-sm:0 2px 10px rgba(11,24,56,.07);
+    --shadow-md:0 14px 40px rgba(11,24,56,.13);
+    --shadow-lg:0 30px 70px rgba(11,24,56,.22);
+    --radius:18px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.display{font-family:'Sora',sans-serif;line-height:1.15;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  section{position:relative}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:'Sora',sans-serif;font-weight:600;font-size:.96rem;
+    padding:14px 26px;border-radius:999px;border:2px solid transparent;
+    cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+    white-space:nowrap;
+  }
+  .btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 8px 22px rgba(245,180,23,.4)}
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(245,180,23,.5)}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+  .btn-ghost{background:transparent;border-color:rgba(255,255,255,.4);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+  .btn-wa{background:#25d366;color:#073b1e}
+  .btn-wa:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(37,211,102,.45)}
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(251,250,247,.86);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Sora',sans-serif;font-weight:800;font-size:1.35rem;color:var(--navy)}
+  .brand .logo{
+    width:42px;height:42px;border-radius:11px;
+    background:var(--navy);color:var(--gold);
+    display:grid;place-items:center;font-size:1.3rem;font-weight:800;
+    box-shadow:var(--shadow-sm);
+  }
+  .brand b{color:var(--gold)}
+  .navlinks{display:flex;align-items:center;gap:30px}
+  .navlinks a{font-weight:600;font-size:.95rem;color:var(--ink);position:relative;padding:4px 0}
+  .navlinks a::after{
+    content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;
+    background:var(--gold);transition:width .25s ease;
+  }
+  .navlinks a:hover::after{width:100%}
+  .nav-cta{display:flex;gap:10px;align-items:center}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+  .burger span{width:26px;height:3px;background:var(--navy);border-radius:2px;transition:.3s}
+
+  /* ---------- topbar ---------- */
+  .topbar{
+    background:var(--navy);color:#fff;font-size:.82rem;
+    display:flex;justify-content:center;gap:26px;padding:7px 16px;
+    flex-wrap:wrap;font-weight:500;
+  }
+  .topbar span{display:flex;align-items:center;gap:6px;opacity:.92}
+  .topbar b{color:var(--gold-soft)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      radial-gradient(900px 500px at 85% -10%,rgba(245,180,23,.16),transparent 60%),
+      radial-gradient(700px 600px at -5% 110%,rgba(17,34,78,.10),transparent 60%),
+      var(--paper);
+    padding:74px 0 90px;overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid var(--line);
+    padding:7px 15px;border-radius:999px;font-size:.82rem;font-weight:600;color:var(--navy);
+    box-shadow:var(--shadow-sm);margin-bottom:22px;
+  }
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(31,157,87,.18)}
+  .hero h1{font-size:clamp(2.3rem,4.6vw,3.7rem);font-weight:800;color:var(--navy)}
+  .hero h1 .hl{color:var(--navy);position:relative;white-space:nowrap}
+  .hero h1 .hl::after{
+    content:"";position:absolute;left:0;right:0;bottom:6px;height:14px;
+    background:var(--gold);opacity:.55;z-index:-1;border-radius:3px;
+  }
+  .hero p.lead{font-size:1.1rem;color:var(--muted);margin:22px 0 30px;max-width:520px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-stats{display:flex;gap:30px;margin-top:38px;flex-wrap:wrap}
+  .hero-stats div{display:flex;flex-direction:column}
+  .hero-stats .num{font-family:'Sora',sans-serif;font-weight:800;font-size:1.75rem;color:var(--navy)}
+  .hero-stats .lbl{font-size:.82rem;color:var(--muted);font-weight:600}
+
+  /* hero visual card */
+  .hero-card{
+    background:var(--navy);border-radius:26px;padding:34px;color:#fff;
+    box-shadow:var(--shadow-lg);position:relative;overflow:hidden;
+  }
+  .hero-card::before{
+    content:"";position:absolute;width:240px;height:240px;border-radius:50%;
+    background:radial-gradient(circle,rgba(245,180,23,.4),transparent 70%);
+    top:-90px;right:-70px;
+  }
+  .hero-card h3{font-size:1.32rem;margin-bottom:5px}
+  .hero-card .sub{font-size:.9rem;opacity:.7;margin-bottom:22px}
+  .hc-list{display:flex;flex-direction:column;gap:13px;position:relative;z-index:2}
+  .hc-item{display:flex;gap:13px;align-items:flex-start}
+  .hc-ic{
+    width:38px;height:38px;border-radius:11px;flex-shrink:0;
+    background:rgba(245,180,23,.16);color:var(--gold);
+    display:grid;place-items:center;font-size:1.05rem;
+  }
+  .hc-item h4{font-size:.98rem;font-weight:600}
+  .hc-item p{font-size:.83rem;opacity:.72;line-height:1.5}
+  .hc-badge{
+    margin-top:24px;background:var(--gold);color:var(--navy);
+    border-radius:14px;padding:14px 18px;display:flex;align-items:center;
+    justify-content:space-between;font-family:'Sora',sans-serif;position:relative;z-index:2;
+  }
+  .hc-badge b{font-size:1.05rem}
+  .hc-badge span{font-size:.78rem;font-weight:600;opacity:.8}
+
+  /* ---------- section heading ---------- */
+  .sec{padding:88px 0}
+  .sec-head{text-align:center;max-width:660px;margin:0 auto 54px}
+  .eyebrow{
+    display:inline-block;font-family:'Sora',sans-serif;font-weight:700;
+    font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);background:rgba(245,180,23,.13);
+    padding:6px 14px;border-radius:999px;margin-bottom:16px;
+  }
+  .sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:800;color:var(--navy)}
+  .sec-head p{color:var(--muted);margin-top:14px;font-size:1.04rem}
+  .alt{background:var(--paper-2)}
+  .dark{background:var(--navy-deep);color:#fff}
+  .dark .sec-head h2{color:#fff}
+  .dark .sec-head p{color:rgba(255,255,255,.7)}
+
+  /* ---------- why / features ---------- */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px;transition:transform .22s ease,box-shadow .22s ease,border-color .22s;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent}
+  .card .ic{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    font-size:1.45rem;margin-bottom:18px;
+    background:var(--navy);color:var(--gold);
+  }
+  .card h3{font-size:1.15rem;color:var(--navy);margin-bottom:9px}
+  .card p{color:var(--muted);font-size:.94rem}
+  .card.gold-ic .ic{background:rgba(245,180,23,.16);color:#b4810a}
+
+  /* ---------- courses ---------- */
+  .courses{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .course{
+    background:#fff;border-radius:var(--radius);overflow:hidden;
+    border:1px solid var(--line);display:flex;flex-direction:column;
+    transition:transform .22s ease,box-shadow .22s ease;
+  }
+  .course:hover{transform:translateY(-7px);box-shadow:var(--shadow-md)}
+  .course-top{padding:26px 26px 20px;color:#fff;position:relative}
+  .course.jee .course-top{background:linear-gradient(135deg,#11224e,#1c3a86)}
+  .course.neet .course-top{background:linear-gradient(135deg,#0e6b3b,#1f9d57)}
+  .course.cet .course-top{background:linear-gradient(135deg,#b4810a,#f5b417)}
+  .course-top .tag{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+  .course-top h3{font-size:1.5rem;margin:6px 0 4px;font-weight:800}
+  .course-top .desc{font-size:.86rem;opacity:.85}
+  .course-body{padding:24px 26px;flex:1;display:flex;flex-direction:column}
+  .course-body ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:20px}
+  .course-body li{display:flex;gap:10px;font-size:.92rem;color:var(--ink);align-items:flex-start}
+  .course-body li::before{content:"✓";color:var(--green);font-weight:800;flex-shrink:0}
+  .course-body .subj{font-size:.82rem;color:var(--muted);font-weight:600;margin-bottom:14px}
+  .course-foot{margin-top:auto;padding-top:18px;border-top:1px dashed var(--line)}
+
+  /* ---------- ecosystem / provide ---------- */
+  .eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .eco{
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+    border-radius:var(--radius);padding:26px;transition:.22s;
+  }
+  .eco:hover{background:rgba(255,255,255,.07);transform:translateY(-5px)}
+  .eco .ic{
+    width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+    background:rgba(245,180,23,.16);color:var(--gold);font-size:1.2rem;margin-bottom:14px;
+  }
+  .eco h3{font-size:1.05rem;margin-bottom:7px}
+  .eco p{font-size:.88rem;color:rgba(255,255,255,.66)}
+
+  /* ---------- schedule / steps ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}
+  .step{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;position:relative;
+  }
+  .step::before{
+    counter-increment:step;content:counter(step,decimal-leading-zero);
+    font-family:'Sora',sans-serif;font-weight:800;font-size:1.7rem;
+    color:var(--gold);display:block;margin-bottom:10px;
+  }
+  .step h3{color:var(--navy);font-size:1.1rem;margin-bottom:7px}
+  .step p{color:var(--muted);font-size:.92rem}
+  .schedule-band{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+  .sb{background:var(--navy);color:#fff;border-radius:14px;padding:20px 22px}
+  .sb .d{font-family:'Sora',sans-serif;font-weight:700;color:var(--gold-soft);font-size:.86rem;letter-spacing:.04em}
+  .sb h4{font-size:1.05rem;margin:3px 0 6px}
+  .sb p{font-size:.84rem;opacity:.72}
+
+  /* ---------- fees ---------- */
+  .fees{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:880px;margin:0 auto}
+  .fee{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:32px;position:relative;display:flex;flex-direction:column;
+  }
+  .fee.featured{border:2px solid var(--gold);box-shadow:var(--shadow-md)}
+  .fee .ribbon{
+    position:absolute;top:18px;right:-2px;background:var(--gold);color:var(--navy);
+    font-family:'Sora',sans-serif;font-weight:700;font-size:.72rem;
+    padding:5px 14px;border-radius:6px 0 0 6px;
+  }
+  .fee h3{font-size:1.3rem;color:var(--navy)}
+  .fee .course-note{font-size:.84rem;color:var(--muted);margin-bottom:16px}
+  .fee .price-old{font-size:.95rem;color:var(--muted);text-decoration:line-through}
+  .fee .price{font-family:'Sora',sans-serif;font-weight:800;font-size:2.1rem;color:var(--navy);line-height:1.1}
+  .fee .price small{font-size:.85rem;color:var(--muted);font-weight:600}
+  .fee .opt{
+    display:flex;justify-content:space-between;font-size:.9rem;
+    padding:9px 0;border-bottom:1px dashed var(--line);
+  }
+  .fee .opt b{color:var(--navy);font-family:'Sora',sans-serif}
+  .fee ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin:18px 0}
+  .fee li{display:flex;gap:9px;font-size:.9rem;align-items:flex-start}
+  .fee li::before{content:"✓";color:var(--green);font-weight:800;flex-shrink:0}
+  .fee .btn{margin-top:auto;justify-content:center}
+  .emi-band{
+    max-width:880px;margin:24px auto 0;background:rgba(31,157,87,.1);
+    border:1px solid rgba(31,157,87,.3);border-radius:14px;
+    padding:18px 24px;display:flex;align-items:center;gap:14px;
+  }
+  .emi-band .ic{font-size:1.5rem}
+  .emi-band b{color:var(--navy);font-family:'Sora',sans-serif}
+  .emi-band p{font-size:.9rem;color:var(--muted)}
+
+  /* ---------- foundation ---------- */
+  .found-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+  .classchips{display:flex;gap:14px;margin:22px 0}
+  .classchip{
+    flex:1;text-align:center;border-radius:14px;padding:18px 10px;color:#fff;
+    font-family:'Sora',sans-serif;
+  }
+  .classchip:nth-child(1){background:#11224e}
+  .classchip:nth-child(2){background:#0e6b3b}
+  .classchip:nth-child(3){background:#c0560f}
+  .classchip .n{font-size:1.9rem;font-weight:800;line-height:1}
+  .classchip .t{font-size:.78rem;opacity:.85;font-weight:600}
+  .model-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+  .model{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;font-size:.9rem;font-weight:600;color:var(--navy);
+    display:flex;align-items:center;gap:10px;
+  }
+  .model .ic{color:var(--gold);font-size:1.05rem}
+
+  /* ---------- contact / form ---------- */
+  .contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:38px;align-items:start}
+  .contact-info .ci{
+    display:flex;gap:15px;align-items:flex-start;
+    padding:18px 0;border-bottom:1px solid var(--line);
+  }
+  .contact-info .ci:last-of-type{border-bottom:0}
+  .contact-info .ic{
+    width:46px;height:46px;border-radius:12px;flex-shrink:0;
+    background:var(--navy);color:var(--gold);display:grid;place-items:center;font-size:1.15rem;
+  }
+  .contact-info h4{font-size:.96rem;color:var(--navy);margin-bottom:2px}
+  .contact-info p{font-size:.92rem;color:var(--muted)}
+  .contact-info a{color:var(--navy);font-weight:600}
+  .contact-cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+  .form-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:14px;box-shadow:var(--shadow-md);
+  }
+  .form-card .fc-head{padding:16px 16px 6px;text-align:center}
+  .form-card h3{color:var(--navy);font-size:1.15rem}
+  .form-card p{font-size:.86rem;color:var(--muted);margin-top:3px}
+  .form-frame{width:100%;height:620px;border:0;border-radius:12px;background:var(--paper-2)}
+
+  /* ---------- cta band ---------- */
+  .ctaband{
+    background:linear-gradient(135deg,var(--navy),#1c3a86);
+    border-radius:26px;padding:54px 44px;text-align:center;color:#fff;
+    position:relative;overflow:hidden;
+  }
+  .ctaband::before,.ctaband::after{
+    content:"";position:absolute;border-radius:50%;
+    background:radial-gradient(circle,rgba(245,180,23,.35),transparent 70%);
+  }
+  .ctaband::before{width:280px;height:280px;top:-120px;left:-80px}
+  .ctaband::after{width:300px;height:300px;bottom:-150px;right:-90px}
+  .ctaband h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;position:relative;z-index:2}
+  .ctaband p{opacity:.8;margin:14px auto 28px;max-width:540px;position:relative;z-index:2}
+  .ctaband .hero-cta{justify-content:center;position:relative;z-index:2}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy-deep);color:#fff;padding:60px 0 26px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:36px;margin-bottom:40px}
+  .foot-brand{display:flex;align-items:center;gap:11px;font-family:'Sora',sans-serif;font-weight:800;font-size:1.25rem;margin-bottom:14px}
+  .foot-brand .logo{width:38px;height:38px;border-radius:10px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-weight:800}
+  .foot-brand b{color:var(--gold)}
+  footer p.about{font-size:.9rem;color:rgba(255,255,255,.6);max-width:300px}
+  footer h4{font-family:'Sora',sans-serif;font-size:.95rem;margin-bottom:16px;color:var(--gold-soft)}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  footer ul a{font-size:.9rem;color:rgba(255,255,255,.66);transition:.2s}
+  footer ul a:hover{color:var(--gold)}
+  .foot-contact p{font-size:.9rem;color:rgba(255,255,255,.66);margin-bottom:10px;display:flex;gap:9px;align-items:flex-start}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.1);padding-top:22px;
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    font-size:.82rem;color:rgba(255,255,255,.5);
+  }
+
+  /* ---------- floating whatsapp ---------- */
+  .fab{
+    position:fixed;right:22px;bottom:22px;z-index:90;
+    width:58px;height:58px;border-radius:50%;background:#25d366;
+    display:grid;place-items:center;color:#fff;font-size:1.6rem;
+    box-shadow:0 10px 30px rgba(37,211,102,.5);transition:transform .2s;
+  }
+  .fab:hover{transform:scale(1.1)}
+
+  /* ---------- reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:980px){
+    .hero-grid,.found-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+    .grid-3,.courses,.eco-grid,.steps,.schedule-band{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:720px){
+    .navlinks{
+      position:fixed;inset:74px 0 auto 0;background:var(--paper);
+      flex-direction:column;padding:24px;gap:18px;
+      border-bottom:1px solid var(--line);box-shadow:var(--shadow-md);
+      transform:translateY(-140%);transition:transform .35s ease;
+    }
+    .navlinks.open{transform:translateY(0)}
+    .nav-cta .btn:not(.burger){display:none}
+    .burger{display:flex}
+    .grid-3,.courses,.eco-grid,.steps,.schedule-band,.fees,.model-list,.foot-grid{grid-template-columns:1fr}
+    .classchips{flex-wrap:wrap}
+    .sec{padding:62px 0}
+    .ctaband{padding:40px 24px}
+    .hero{padding:48px 0 64px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+  <span>📞 Call / WhatsApp <b>7588201439</b></span>
+  <span>📍 Yavatmal Road, Nandgaon Khandeshwar, Amravati 444708</span>
+  <span>🎓 Admissions Open <b>2026–27</b></span>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="brand">
+      <span class="logo">M</span>Mentora<b>X</b>
+    </a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#why">Why Us</a>
+      <a href="#courses">Courses</a>
+      <a href="#foundation">Foundation</a>
+      <a href="#ecosystem">What You Get</a>
+      <a href="#fees">Fees</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-gold">Enroll Now</a>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="pill"><span class="dot"></span> New Batch Starting 1 May 2026 — Limited Seats</span>
+      <h1>Bada Sapna Hai? <span class="hl">Hum Hai Na.</span></h1>
+      <p class="lead">
+        Personalised JEE, NEET &amp; MHT-CET coaching with only <strong>10 students per batch</strong>.
+        Online live batches and offline classroom — real personal attention,
+        result-oriented teaching, and complete parent updates.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-gold">Book Your Seat ➜</a>
+        <a href="https://wa.me/917588201439" target="_blank" rel="noopener" class="btn btn-wa">💬 WhatsApp Us</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="num">10</span><span class="lbl">Students / Batch</span></div>
+        <div><span class="num">3</span><span class="lbl">Exams Covered</span></div>
+        <div><span class="num">2 Yr</span><span class="lbl">Integrated Program</span></div>
+        <div><span class="num">24/7</span><span class="lbl">Doubt Support</span></div>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <h3>Why MentoraX Works</h3>
+      <p class="sub">Success Tumhara, Guidance Hamara.</p>
+      <div class="hc-list">
+        <div class="hc-item">
+          <div class="hc-ic">👨‍🏫</div>
+          <div><h4>Live Interactive Classes</h4><p>Learn, interact &amp; clear doubts live — not passive recordings.</p></div>
+        </div>
+        <div class="hc-item">
+          <div class="hc-ic">📝</div>
+          <div><h4>Daily Practice (DPP)</h4><p>Roz practice, roz improvement — concepts reinforced every day.</p></div>
+        </div>
+        <div class="hc-item">
+          <div class="hc-ic">📊</div>
+          <div><h4>Weekly + Monthly Tests</h4><p>Track progress with detailed performance analysis.</p></div>
+        </div>
+        <div class="hc-item">
+          <div class="hc-ic">🎯</div>
+          <div><h4>Personal Mentorship</h4><p>One-to-one guidance and direct doubt solving.</p></div>
+        </div>
+      </div>
+      <div class="hc-badge">
+        <b>Admissions Open Now!</b>
+        <span>Jaldi enroll karo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why MentoraX</span>
+      <h2>Small batches. Big results.</h2>
+      <p>In an industry of 100+ student classrooms, we deliberately keep batches of just 10 — because every student deserves to be known, not counted.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal">
+        <div class="ic">👥</div>
+        <h3>Only 10 Per Batch</h3>
+        <p>Teachers know every student by name, notice when someone struggles, and adjust the pace accordingly.</p>
+      </div>
+      <div class="card reveal gold-ic">
+        <div class="ic">🧠</div>
+        <h3>Concept-Based Teaching</h3>
+        <p>Strong conceptual clarity over rote learning — a foundation that lasts beyond the exam.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">📈</div>
+        <h3>Performance Tracking</h3>
+        <p>Weekly tests, monthly reports and graphical progress so weak areas are caught early.</p>
+      </div>
+      <div class="card reveal gold-ic">
+        <div class="ic">🤝</div>
+        <h3>Strong Mentorship</h3>
+        <p>Experienced mentors who guide, motivate and support you through every challenge.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">👨‍👩‍👧</div>
+        <h3>Parents Get Full Updates</h3>
+        <p>Weekly progress reports and feedback shared directly with parents on WhatsApp.</p>
+      </div>
+      <div class="card reveal gold-ic">
+        <div class="ic">💻</div>
+        <h3>Online + Offline</h3>
+        <p>Live online batches, offline classroom, recorded lectures &amp; online test series — all models available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COURSES ===== -->
+<section class="sec alt" id="courses">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Courses Offered</span>
+      <h2>Comprehensive preparation for every goal</h2>
+      <p>2-year integrated programs covering Class 11 + 12, designed by experienced educators who know each exam's pattern inside-out.</p>
+    </div>
+    <div class="courses">
+      <div class="course jee reveal">
+        <div class="course-top">
+          <span class="tag">Engineering</span>
+          <h3>JEE Main + Advanced</h3>
+          <p class="desc">India's premier engineering entrance — your gateway to IITs &amp; NITs.</p>
+        </div>
+        <div class="course-body">
+          <p class="subj">Physics · Chemistry · Mathematics</p>
+          <ul>
+            <li>Complete syllabus aligned with JEE pattern</li>
+            <li>Advanced problem-solving strategies</li>
+            <li>Mock tests simulating real exam conditions</li>
+            <li>Previous years' question analysis</li>
+          </ul>
+          <div class="course-foot">
+            <a href="#contact" class="btn btn-navy">Enquire about JEE ➜</a>
+          </div>
+        </div>
+      </div>
+      <div class="course neet reveal">
+        <div class="course-top">
+          <span class="tag">Medical</span>
+          <h3>NEET (UG)</h3>
+          <p class="desc">India's single medical entrance for MBBS, BDS &amp; allied courses.</p>
+        </div>
+        <div class="course-body">
+          <p class="subj">Physics · Chemistry · Biology</p>
+          <ul>
+            <li>NCERT-focused curriculum</li>
+            <li>Detailed Biology notes &amp; diagram-based learning</li>
+            <li>Speed &amp; accuracy development</li>
+            <li>Regular full-syllabus mock tests</li>
+          </ul>
+          <div class="course-foot">
+            <a href="#contact" class="btn btn-navy">Enquire about NEET ➜</a>
+          </div>
+        </div>
+      </div>
+      <div class="course cet reveal">
+        <div class="course-top">
+          <span class="tag">State Level</span>
+          <h3>MHT-CET</h3>
+          <p class="desc">Maharashtra's gateway to top engineering &amp; pharmacy colleges.</p>
+        </div>
+        <div class="course-body">
+          <p class="subj">PCM / PCB · State Board aligned</p>
+          <ul>
+            <li>State board syllabus integration</li>
+            <li>MHT-CET pattern &amp; marking scheme focus</li>
+            <li>Regular practice tests with analysis</li>
+            <li>Time management for multiple subjects</li>
+          </ul>
+          <div class="course-foot">
+            <a href="#contact" class="btn btn-navy">Enquire about CET ➜</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOUNDATION ===== -->
+<section class="sec" id="foundation">
+  <div class="wrap found-grid">
+    <div class="reveal">
+      <span class="eyebrow">Foundation Classes</span>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);color:var(--navy);font-weight:800">Start early. Build the base.</h2>
+      <p style="color:var(--muted);margin-top:14px">
+        Foundation batches for Class 8th, 9th &amp; 10th — early preparation for JEE, NEET and MHT-CET
+        with concept clarity from the basics. All learning models available.
+      </p>
+      <div class="classchips">
+        <div class="classchip"><div class="n">8<sup>th</sup></div><div class="t">Class</div></div>
+        <div class="classchip"><div class="n">9<sup>th</sup></div><div class="t">Class</div></div>
+        <div class="classchip"><div class="n">10<sup>th</sup></div><div class="t">Class</div></div>
+      </div>
+      <a href="#contact" class="btn btn-gold">Enquire for Foundation ➜</a>
+    </div>
+    <div class="reveal">
+      <h4 style="font-family:'Sora';color:var(--navy);margin-bottom:6px">All learning models provided</h4>
+      <div class="model-list">
+        <div class="model"><span class="ic">🏫</span> Offline Classroom</div>
+        <div class="model"><span class="ic">📡</span> Live Online Class</div>
+        <div class="model"><span class="ic">▶️</span> Recorded Classes</div>
+        <div class="model"><span class="ic">🖥️</span> Online Test Series</div>
+      </div>
+      <h4 style="font-family:'Sora';color:var(--navy);margin:22px 0 6px">Every model includes</h4>
+      <div class="model-list">
+        <div class="model"><span class="ic">📱</span> Android Tablet</div>
+        <div class="model"><span class="ic">📚</span> Kota Modules</div>
+        <div class="model"><span class="ic">🗺️</span> Mind Maps</div>
+        <div class="model"><span class="ic">🎁</span> Free Counseling</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ECOSYSTEM ===== -->
+<section class="sec dark" id="ecosystem">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What You Get</span>
+      <h2>A complete learning ecosystem</h2>
+      <p>MentoraX isn't just classes — it's everything you need for success, thoughtfully provided.</p>
+    </div>
+    <div class="eco-grid">
+      <div class="eco reveal"><div class="ic">📘</div><h3>Complete Study Material</h3><p>Chapter-wise notes, solved examples and practice questions covering the entire syllabus.</p></div>
+      <div class="eco reveal"><div class="ic">📱</div><h3>Tablet for Learning</h3><p>Pre-loaded tablet with lectures, materials, tests and performance tracking (select packages).</p></div>
+      <div class="eco reveal"><div class="ic">✍️</div><h3>Daily Practice Problems</h3><p>Curated DPPs matched to difficulty level and exam pattern for steady skill building.</p></div>
+      <div class="eco reveal"><div class="ic">📊</div><h3>Weekly Tests &amp; Analysis</h3><p>Exam-like tests with detailed section-wise and topic-wise performance reports.</p></div>
+      <div class="eco reveal"><div class="ic">👨‍🏫</div><h3>Personal Mentorship</h3><p>One-on-one mentor who tracks progress, solves doubts and guides your strategy.</p></div>
+      <div class="eco reveal"><div class="ic">🎥</div><h3>Recorded Lectures</h3><p>Missed a class? Revise anytime, anywhere — learn at your own pace.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCHEDULE ===== -->
+<section class="sec alt" id="schedule">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Class Structure</span>
+      <h2>Designed for maximum learning</h2>
+      <p>A structured weekly rhythm that balances new concepts, practice, testing and rest.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <h3>Concept Teaching</h3>
+        <p>First hour — clear conceptual teaching with real-life examples and visual aids.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Problem Solving</h3>
+        <p>Second hour — guided practice to build problem-solving speed and accuracy.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Doubt Solving</h3>
+        <p>Third hour — dedicated doubt resolution so no question goes unanswered.</p>
+      </div>
+    </div>
+    <div class="schedule-band">
+      <div class="sb"><div class="d">MON – FRI</div><h4>Teaching Days</h4><p>Daily classes covering concepts, practice &amp; doubts.</p></div>
+      <div class="sb"><div class="d">SATURDAY</div><h4>Test Day</h4><p>Weekly tests, mock exams &amp; detailed feedback.</p></div>
+      <div class="sb"><div class="d">SUNDAY</div><h4>Rest Day</h4><p>Self-study, revision &amp; recovery to prevent burnout.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:24px;color:var(--muted);font-size:.92rem">
+      🌅 Morning &amp; 🌆 Evening batches available — choose what fits your school schedule.
+    </p>
+  </div>
+</section>
+
+<!-- ===== FEES ===== -->
+<section class="sec" id="fees">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Fee Structure</span>
+      <h2>Quality coaching, honest pricing</h2>
+      <p>Complete 2-year integrated courses with flexible EMI options. No hidden costs.</p>
+    </div>
+    <div class="fees">
+      <div class="fee featured reveal">
+        <span class="ribbon">🔥 EARLY BIRD</span>
+        <h3>JEE / NEET Program</h3>
+        <p class="course-note">Complete 2-Year Integrated Course</p>
+        <p class="price-old">Actual Fees: ₹1,30,000</p>
+        <p class="price">₹80,000 <small>/ early bird offer</small></p>
+        <ul>
+          <li>Full Class 11th + 12th syllabus coverage</li>
+          <li>Daily classes — Morning / Evening</li>
+          <li>Study material + Daily Practice Problems</li>
+          <li>Weekly tests &amp; performance analysis</li>
+          <li>Personal mentorship + recorded lectures</li>
+        </ul>
+        <a href="#contact" class="btn btn-gold">Enroll for JEE / NEET ➜</a>
+      </div>
+      <div class="fee reveal">
+        <h3>MHT-CET Program</h3>
+        <p class="course-note">Complete 2-Year Integrated Course</p>
+        <p class="price-old">Actual Fees: ₹80,000</p>
+        <div class="opt"><span>Without Tablet</span><b>₹60,000</b></div>
+        <div class="opt"><span>With Tablet</span><b>₹70,000</b></div>
+        <ul>
+          <li>State board pattern-focused preparation</li>
+          <li>Daily classes — Morning / Evening</li>
+          <li>Study material + Daily Practice Problems</li>
+          <li>Weekly tests &amp; performance analysis</li>
+          <li>Personal mentorship throughout</li>
+        </ul>
+        <a href="#contact" class="btn btn-navy">Enroll for MHT-CET ➜</a>
+      </div>
+    </div>
+    <div class="emi-band reveal">
+      <span class="ic">💳</span>
+      <div>
+        <b>Flexible Payment Option —</b>
+        <p>Pay in 5 easy EMIs within 6 months. Quality coaching without financial burden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT / FORM ===== -->
+<section class="sec alt" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Admissions</span>
+      <h2>Book your seat at MentoraX</h2>
+      <p>Fill the enquiry form and our team will call you back. Limited seats — admissions close once batches are full.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="ci">
+          <div class="ic">📞</div>
+          <div>
+            <h4>Call / WhatsApp</h4>
+            <p><a href="tel:7588201439">7588201439</a></p>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ic">📍</div>
+          <div>
+            <h4>Visit Us</h4>
+            <p>In front of HP Petrol Pump, Yavatmal Road,<br>1st Floor, MentoraX Academy,<br>Nandgaon Khandeshwar, Amravati 444708</p>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ic">🕒</div>
+          <div>
+            <h4>Batch Timings</h4>
+            <p>Morning &amp; Evening batches · Mon–Sat<br>New batch starts 1 May 2026</p>
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ic">🎓</div>
+          <div>
+            <h4>Programs</h4>
+            <p>JEE · NEET · MHT-CET · Foundation (8th–10th)<br>Online &amp; Offline — all models available</p>
+          </div>
+        </div>
+        <div class="contact-cta">
+          <a href="https://wa.me/917588201439" target="_blank" rel="noopener" class="btn btn-wa">💬 Chat on WhatsApp</a>
+          <a href="tel:7588201439" class="btn btn-navy">📞 Call Now</a>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <div class="fc-head">
+          <h3>Enquiry / Admission Form</h3>
+          <p>Takes under a minute — we'll get back to you soon.</p>
+        </div>
+        <!-- ============================================================
+             STEP 1 of 2 — paste your Google Form EMBED link in src below.
+             How to get it:
+               1. Open your Google Form
+               2. Click  Send  (top right)  ->  the  < >  embed icon
+               3. Copy ONLY the link inside  src="..."
+               4. Replace the src="" link below with yours
+             ============================================================ -->
+        <iframe
+          class="form-frame"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSf_REPLACE_WITH_YOUR_FORM_ID/viewform?embedded=true"
+          title="MentoraX Admission Enquiry Form">
+          Loading…
+        </iframe>
+        <!-- STEP 2 of 2 — paste the SAME form's normal share link below
+             (Send -> link icon). This button is a backup for mobile users. -->
+        <div style="padding:12px 8px 6px;text-align:center">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_REPLACE_WITH_YOUR_FORM_ID/viewform"
+             target="_blank" rel="noopener" class="btn btn-gold" style="width:100%;justify-content:center">
+            Open Enquiry Form in New Tab ➜
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="ctaband reveal">
+      <h2>Sahi Guidance + Smart Work = Dream College</h2>
+      <p>Today's preparation, tomorrow's success. Join MentoraX and experience coaching where every student matters.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-gold">Enroll Now ➜</a>
+        <a href="https://wa.me/917588201439" target="_blank" rel="noopener" class="btn btn-ghost">💬 WhatsApp 7588201439</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="logo">M</span>Mentora<b>X</b> Academy</div>
+        <p class="about">Right guidance today, the best future tomorrow. Personalised JEE, NEET &amp; MHT-CET coaching with only 10 students per batch — online &amp; offline.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#foundation">Foundation</a></li>
+          <li><a href="#fees">Fees</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="#courses">JEE Main + Advanced</a></li>
+          <li><a href="#courses">NEET (UG)</a></li>
+          <li><a href="#courses">MHT-CET</a></li>
+          <li><a href="#foundation">Foundation 8–10</a></li>
+        </ul>
+      </div>
+      <div class="foot-contact">
+        <h4>Get In Touch</h4>
+        <p>📞 <a href="tel:7588201439" style="color:rgba(255,255,255,.66)">7588201439</a></p>
+        <p>📍 Yavatmal Road, Nandgaon Khandeshwar, Amravati 444708</p>
+        <p>💬 <a href="https://wa.me/917588201439" target="_blank" rel="noopener" style="color:rgba(255,255,255,.66)">WhatsApp Us</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 MentoraX Academy. All rights reserved.</span>
+      <span>Focused Learning · Real Results</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING WHATSAPP ===== -->
+<a href="https://wa.me/917588201439" target="_blank" rel="noopener" class="fab" aria-label="WhatsApp">💬</a>
+
+<script>
+  // ----- mobile menu -----
+  const burger = document.getElementById('burger');
+  const navlinks = document.getElementById('navlinks');
+  burger.addEventListener('click', () => navlinks.classList.toggle('open'));
+  navlinks.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => navlinks.classList.remove('open'))
+  );
+
+  // ----- scroll reveal -----
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 0.08 + 's';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>
